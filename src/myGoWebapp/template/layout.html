@@ -1,0 +1,52 @@
+{{ define "Index" }}
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>Database Table</title>
+        <meta charset="UTF-8" />
+        <style>
+        body{
+            min-height:100%;
+            background-image: url("/static/stylesheets/background.jpeg"), linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.3));
+            background-blend-mode: overlay;
+            background-size:cover;
+            color:white
+         }
+         </style>
+
+    </head>
+    <body>
+        <h1>USERINFO TABLE</h1>
+
+    {{ $length := len . }}
+    <h3>Length {{$length}}</h3>
+
+    <table border="1" style="font-size:300%">
+      <tr>
+        <td>Uid</td>
+        <td>UserName</td>
+        <td>Department Name</td>
+        <td>Date Created</td>
+      </tr>
+    {{ range . }}
+      <tr>
+        <td>{{ .Uid }}</td>
+        <td>{{ .Username }}</td>
+        <td> {{ .Departname}} </td>
+        <td>{{ .Created}} </td>
+
+      </tr>
+    {{ end }}
+    </table>
+
+    </body>
+</html>
+{{ end }}
+<style>
+body{
+    min-height:100%;
+    background-image: url("/static/stylesheets/background.jpeg"), linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.3));
+    background-blend-mode: overlay;
+    background-size:cover
+ }
+ </style>

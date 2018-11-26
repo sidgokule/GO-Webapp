@@ -1,0 +1,46 @@
+
+<html>
+   <head>
+         <meta charset="UTF-8">
+         <link rel="stylesheet" href="/static/stylesheets/welcome-template.css">
+
+         <!-- The welcome struct (shown in the main.go code) is received within the HTML and we just need to use the . operator and retrieve the information we want -->
+         <title>Welcome {{.Name}}</title>
+   </head>
+<body>
+
+      <div class="welcome center">Welcome {{.Name}}</div>
+
+
+      <div style="margin-left: 5%;">
+
+      <!-- Create User Form -->
+      <form action="/create" method="post" class="form-style">
+          Username:<input type="text" name="username" class="text-box-style">
+          Department:<input type="text" name="department" class="text-box-style">
+          Date Created(YYYY-MM-DD):<input type="text" name="datecreated" class="text-box-style">
+          <input type="submit" value="Create User" class="button-style" onclick="alert('User created succesfully!')">
+      </form>
+
+      <!-- Update User Form -->
+      <form action="/update" method="post" class="form-style">
+          Username to Update:<input type="text" name="username" class="text-box-style">
+          New Department:<input type="text" name="department" class="text-box-style">
+          <input type="submit" value="Update User" class="button-style" onclick="alert('User updated succesfully!')">
+      </form>
+
+      <!-- Delete User Form -->
+      <form action="/delete" method="post" class="form-style">
+          Username to Delete:<input type="text" name="username" class="text-box-style">
+          <input type="submit" value="Delete User" class="button-style" onclick="alert('User deleted succesfully!')">
+      </form>
+
+      <!-- Read User Form -->
+      <form action="/read" method="post" class="form-style">
+          <input type="submit" value="Show all users" class="button-style">
+      </form>
+    </div>
+
+
+</body>
+</html>
